@@ -5,7 +5,7 @@ const UndoRedo = ({ dataList, currentIndex, setDataValue, isMax, isMin }) => {
     }
   };
   const onRedo = () => {
-    if (dataList.length - 1 > currentIndex) {
+    if (currentIndex < dataList.length - 1) {
       setDataValue(currentIndex + 1);
     }
   };
