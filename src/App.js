@@ -36,6 +36,7 @@ export default function App() {
   return (
     <div className="App">
       <input
+        className="input"
         type="text"
         value={inputValue}
         onChange={(evt) => handleOnChange(evt)}

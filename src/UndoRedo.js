@@ -15,6 +15,7 @@ const UndoRedo = ({ dataList, currentIndex, setDataValue, isMax, isMin }) => {
       <button disabled={currentIndex === 0} onClick={() => onUndo()}>
         Undo
       </button>
+      <span> | </span>
       <button
         disabled={currentIndex === dataList.length - 1}
         onClick={() => onRedo()}
