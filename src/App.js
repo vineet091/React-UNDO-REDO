@@ -19,6 +19,16 @@ export default function App() {
     setValue(value);
   };
 
+  const handleKeyPress = (evt) => {
+    var { value } = evt.target;
+    if (evt.which === 13 || evt.keyCode === 13) {
+      var newDataList = dataList.splice(0, currentIndex + 1);
+      newDataList.push(value);
+      setDataList(newDataList);
+      setCurrentIndex(newDataList.length - 1);
+    }
+  };
+
   const setDataValue = (index) => {
     setCurrentIndex(index);
     setValue(dataList[index]);
@@ -30,6 +40,7 @@ export default function App() {
         value={inputValue}
         onChange={(evt) => handleOnChange(evt)}
         onBlur={(evt) => handleOnBlur(evt)}
+        onKeyPress={(evt) => handleKeyPress(evt)}
       />
       <UndoRedo
         dataList={dataList}
